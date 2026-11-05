@@ -17,3 +17,51 @@ html{scroll-behavior:smooth}body{font-family:"Nunito Sans",sans-serif;color:#4f5
 #contactForm button[disabled]{opacity:.7;cursor:wait}
 .form-notice.success{color:#237447}.form-notice.error{color:#a33131}
 @media(max-width:767px){.contact-info-grid{grid-template-columns:1fr;gap:15px;margin-bottom:42px}.contact-info-card{min-height:0;padding:23px}.site-header{position:sticky}}
+
+
+/* =========================================================
+   GLOBAL CONTACT BUTTON
+   Keeps Contact highlighted on every page of the website.
+   ========================================================= */
+.main-nav ul li:last-child > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 19px;
+  box-sizing: border-box;
+  border: 1px solid var(--gold, #cea15a);
+  border-radius: 7px;
+  background: var(--gold, #cea15a);
+  color: #17191d !important;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 5px 14px rgba(206, 161, 90, 0.16);
+  transition: background-color .25s ease, border-color .25s ease,
+              color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.main-nav ul li:last-child > a:hover,
+.main-nav ul li:last-child > a:focus-visible {
+  background: #e0b35f;
+  border-color: #e0b35f;
+  color: #17191d !important;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 18px rgba(206, 161, 90, 0.24);
+}
+
+/* Keep the Contact button neat inside the mobile navigation */
+@media (max-width: 991px) {
+  .main-nav ul li:last-child {
+    padding: 10px 0 4px;
+    border-bottom: 0;
+  }
+
+  .main-nav ul li:last-child > a {
+    min-height: 40px;
+    padding: 0 17px;
+  }
+}
+
