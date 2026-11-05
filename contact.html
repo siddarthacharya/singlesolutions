@@ -1,11 +1,655 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Single Source Legal Services provides business-focused legal, labour, corporate compliance and regulatory support."><title>Contact Us | Single Source Legal Services</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900|Oswald:400,500,600,700" rel="stylesheet"><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="fonts/icomoon/style.css"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/custom.css"></head><body><header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html">SINGLE SOURCE<span>LEGAL</span></a><button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button><nav class="main-nav"><ul><li class=""><a href="index.html">Home</a></li><li class=""><a href="about.html">About</a></li><li class=""><a href="services.html">Services</a></li><li class=""><a href="team.html">Our Team</a></li><li class="active"><a href="contact.html">Contact</a></li></ul></nav></div></header><main><section class="page-hero"><div class="container"><span class="eyebrow">CONTACT</span><h1>Start a conversation</h1><p>Tell us about your organization’s legal or compliance needs. Our team can help you identify the right area of support.</p></div></section><section class="section-pad"><div class="container">
-<div class="contact-info-grid">
-  <article class="contact-info-card"><span class="contact-info-icon">☎</span><span class="eyebrow">CALL US</span><h3>Mobile Number</h3><a href="tel:+910000000000">Add official mobile number</a><p>Replace this with your verified business phone number.</p></article>
-  <article class="contact-info-card"><span class="contact-info-icon">✉</span><span class="eyebrow">EMAIL US</span><h3>Email Address</h3><a href="mailto:info@example.com">Add official email address</a><p>Replace this with your verified business email.</p></article>
-  <article class="contact-info-card"><span class="contact-info-icon">⌖</span><span class="eyebrow">VISIT US</span><h3>Office Location</h3><p class="contact-value">Add office address</p><p>Replace this with the company’s verified office location.</p></article>
-</div>
-<div class="row"><div class="col-lg-7 mb-5"><h2 class="section-heading">Send an enquiry</h2><p>Complete the form below with a brief description of your requirement.</p><form id="contactForm" method="POST" action="https://api.web3forms.com/submit">
-<input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
-<input type="hidden" name="subject" value="New Enquiry - Single Source Legal Services">
-<input type="hidden" name="from_name" value="Single Source Legal Services Website">
-<input type="checkbox" name="botcheck" class="hidden" style="display:none"><div class="form-group"><label for="name">Full name</label><input class="form-control" id="name" name="name" required placeholder="Your name"></div><div class="form-group"><label for="email">Email address</label><input class="form-control" id="email" name="email" type="email" required placeholder="you@example.com"></div><div class="form-group"><label for="phone">Phone number</label><input class="form-control" id="phone" name="phone" placeholder="Your contact number"></div><div class="form-group"><label for="service">Area of support</label><select class="form-control" id="service" name="service" required><option value="">Select a service</option><option>Industrial & Labour Law Support</option><option>Civil and Criminal Legal Services</option><option>Entity Registration & Setup</option><option>EHS (Environment, Health & Safety)</option><option>Licenses, Registrations & End to End Compliance Solutions</option><option>Corporate Compliance</option><option>Tax & Regulatory Compliance</option></select></div><div class="form-group"><label for="message">How can we help?</label><textarea class="form-control" id="message" name="message" rows="5" required placeholder="Briefly describe your requirement"></textarea></div><button class="btn btn-primary" id="submitBtn" type="submit">Submit Enquiry</button><p id="formNotice" class="form-notice" role="status"></p></form></div><div class="col-lg-4 offset-lg-1"><div class="contact-panel"><span class="eyebrow">SINGLE SOURCE SERVICES PRIVATE LIMITED</span><h3>How we can support</h3><p>Our services cover industrial and labour law, civil and criminal legal services, entity setup, EHS, licensing, corporate compliance and tax matters.</p><p class="small-note">Please replace the sample phone number, email address and office location in this page with verified company contact details before publishing.</p><a class="text-link" href="services.html">Browse services →</a></div></div></div></div></section></main><footer class="site-footer"><div class="container"><div class="row"><div class="col-lg-6 mb-4"><a class="brand footer-brand" href="index.html">SINGLE SOURCE<span>LEGAL</span></a><p class="mt-3">Clear, accessible and business-focused legal support for individuals, startups and established organizations.</p></div><div class="col-lg-3 col-6"><h4>Explore</h4><a href="about.html">About us</a><a href="services.html">Our services</a><a href="team.html">Our team</a><a href="contact.html">Contact</a></div><div class="col-lg-3 col-6"><h4>Our focus</h4><a href="services.html">Labour law</a><a href="services.html">Corporate compliance</a><a href="services.html">Tax & regulatory</a><a href="services.html">EHS compliance</a></div></div><div class="copyright">© <span id="year"></span> Single Source Services Private Limited. All rights reserved.</div></div></footer><script src="js/jquery-3.3.1.min.js"></script><script src="js/bootstrap.min.js"></script><script src="js/custom.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Contact Single Source Corporate Solutions for legal, labour, corporate compliance and regulatory support."
+    />
+    <title>Contact Us | Single Source Legal Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900|Oswald:400,500,600,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <style>
+      .ss-popup-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(15, 28, 24, 0.62);
+      }
+      .ss-popup-overlay.show {
+        display: flex;
+      }
+      .ss-popup {
+        width: min(100%, 440px);
+        padding: 34px 28px 28px;
+        background: #fff;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+        animation: ssPopupIn 0.22s ease-out;
+      }
+      @keyframes ssPopupIn {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .ss-popup-icon {
+        width: 66px;
+        height: 66px;
+        margin: 0 auto 17px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: #dcfce9;
+        color: #15945f;
+        font-size: 30px;
+      }
+      .ss-popup.error .ss-popup-icon {
+        background: #fee2e2;
+        color: #dc2626;
+      }
+      .ss-popup h3 {
+        margin: 0 0 10px;
+        color: #173d32;
+        font-size: 24px;
+        font-weight: 900;
+      }
+      .ss-popup p {
+        margin: 0 0 22px;
+        color: #66766f;
+        line-height: 1.6;
+      }
+      .ss-popup-close {
+        border: 0;
+        border-radius: 8px;
+        background: #178066;
+        color: #fff;
+        padding: 11px 26px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .ss-popup-close:hover {
+        background: #126b55;
+      }
+      #submitBtn:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+      .contact-info-card .contact-value {
+        overflow-wrap: anywhere;
+      }
+      /* Contact card: keep the address readable and the map action distinct. */
+      .contact-info-card .location-business-name {
+        margin: 8px 0 5px;
+        color: #263b35;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1.45;
+      }
+      .contact-info-card .location-address {
+        margin: 0 0 15px;
+        color: #68756f;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.65;
+        overflow-wrap: normal;
+      }
+      .contact-info-card .location-map-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 14px;
+        border: 1px solid #d8e7e1;
+        border-radius: 7px;
+        color: #178066;
+        font-size: 14px;
+        font-weight: 800;
+        text-decoration: none;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease,
+          border-color 0.2s ease;
+      }
+      .contact-info-card .location-map-link:hover {
+        background: #178066;
+        border-color: #178066;
+        color: #fff;
+      }
+      /* Highlight the current page in the primary navigation. */
+      .main-nav ul li.active > a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 17px;
+        border: 1px solid #178066;
+        border-radius: 7px;
+        background: #178066;
+        color: #fff !important;
+        font-weight: 800;
+        box-shadow: 0 4px 12px rgba(23, 128, 102, 0.16);
+      }
+      .main-nav ul li.active > a:hover {
+        background: #126b55;
+        border-color: #126b55;
+        color: #fff !important;
+      }
+      @media (max-width: 767px) {
+        .contact-info-card .location-address {
+          font-size: 13px;
+        }
+        .main-nav ul li.active > a {
+          display: flex;
+          width: 100%;
+          justify-content: flex-start;
+        }
+      }
+
+      /* Single Source Legal theme: charcoal, white and muted gold. */
+      .main-nav ul li.active > a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 11px 19px;
+        border: 1px solid #c99743;
+        border-radius: 6px;
+        background: #c99743;
+        color: #1b1c1f !important;
+        font-weight: 800;
+        box-shadow: 0 5px 14px rgba(201, 151, 67, 0.2);
+        transition:
+          background 0.2s ease,
+          color 0.2s ease,
+          transform 0.2s ease;
+      }
+      .main-nav ul li.active > a:hover {
+        background: #e0b35f;
+        border-color: #e0b35f;
+        color: #17181b !important;
+        transform: translateY(-1px);
+      }
+      .ss-popup-overlay {
+        background: rgba(17, 18, 21, 0.72);
+        backdrop-filter: blur(4px);
+      }
+      .ss-popup {
+        width: min(100%, 660px);
+        padding: 48px 42px 40px;
+        border: 1px solid rgba(201, 151, 67, 0.22);
+        border-radius: 24px;
+        background: #fff;
+        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.3);
+      }
+      .ss-popup-icon {
+        width: 78px;
+        height: 78px;
+        margin-bottom: 22px;
+        background: #f6efe3;
+        color: #c18b32;
+        font-size: 36px;
+      }
+      .ss-popup.error .ss-popup-icon {
+        background: #fbe9e7;
+        color: #c43d32;
+      }
+      .ss-popup h3 {
+        color: #1b1c1f;
+        font-family: "Oswald", sans-serif;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+      .ss-popup p {
+        max-width: 500px;
+        margin: 0 auto 26px;
+        color: #687078;
+        font-size: 17px;
+        line-height: 1.65;
+      }
+      .ss-popup-close {
+        min-width: 140px;
+        padding: 13px 28px;
+        border: 1px solid #c99743;
+        border-radius: 8px;
+        background: #c99743;
+        color: #17181b;
+        font-size: 16px;
+        font-weight: 800;
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+      .ss-popup-close:hover {
+        background: #e0b35f;
+        color: #17181b;
+        transform: translateY(-1px);
+      }
+      @media (max-width: 767px) {
+        .main-nav ul li.active > a {
+          display: flex;
+          width: 100%;
+          justify-content: flex-start;
+          padding: 12px 15px;
+        }
+        .ss-popup {
+          padding: 34px 22px 28px;
+          border-radius: 18px;
+        }
+        .ss-popup h3 {
+          font-size: 27px;
+        }
+        .ss-popup p {
+          font-size: 15px;
+        }
+      }
+
+      /* Compact, professionally sized active Contact navigation button */
+      .main-nav ul li.active > a {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 40px !important;
+        min-height: 40px !important;
+        padding: 0 17px !important;
+        line-height: 1 !important;
+        box-sizing: border-box !important;
+        white-space: nowrap;
+      }
+
+      .main-nav ul li.active > a:hover,
+      .main-nav ul li.active > a:focus-visible {
+        background: #e0b35f !important;
+        border-color: #e0b35f !important;
+        color: #17181b !important;
+      }
+
+      /* Google Maps button changes to the site's muted-gold accent on hover */
+      .contact-info-card .location-map-link {
+        transition:
+          background-color 0.2s ease,
+          color 0.2s ease,
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .contact-info-card .location-map-link:hover,
+      .contact-info-card .location-map-link:focus-visible {
+        background: #c99743 !important;
+        border-color: #c99743 !important;
+        color: #17181b !important;
+        text-decoration: none;
+        transform: translateY(-1px);
+      }
+
+      @media (max-width: 767px) {
+        .main-nav ul li.active > a {
+          width: 100% !important;
+          height: 40px !important;
+          min-height: 40px !important;
+          padding: 0 15px !important;
+          justify-content: flex-start !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">SINGLE SOURCE<span>LEGAL</span></a>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li class="active"><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">CONTACT</span>
+          <h1>Start a conversation</h1>
+          <p>
+            Tell us about your organization’s legal or compliance needs. Our
+            team can help you identify the right area of support.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-pad">
+        <div class="container">
+          <div class="contact-info-grid">
+            <article class="contact-info-card">
+              <span class="contact-info-icon">☎</span>
+              <span class="eyebrow">CALL US</span>
+              <h3>Mobile Number</h3>
+              <a href="tel:+918867821101">+91 88678 21101</a>
+              <p>Speak with our team about your enquiry.</p>
+            </article>
+            <article class="contact-info-card">
+              <span class="contact-info-icon">✉</span>
+              <span class="eyebrow">EMAIL US</span>
+              <h3>Email Address</h3>
+              <a href="mailto:plawjuris@gmail.com">plawjuris@gmail.com</a>
+              <p>Send us your questions or requirements.</p>
+            </article>
+            <article class="contact-info-card">
+              <span class="contact-info-icon">⌖</span>
+              <span class="eyebrow">VISIT US</span>
+              <h3>Office Location</h3>
+              <p class="location-business-name">
+                Single Source Corporate Solutions
+              </p>
+              <p class="contact-value location-address">
+                No. 1, First Floor, 1st Cross, A-Sector,<br />Sai Krishna
+                Nivasa, Near Govt. School,<br />Amruthnagar, Bengaluru – 560092
+              </p>
+              <a
+                class="location-map-link"
+                href="https://www.google.com/maps/search/?api=1&query=Single%20Source%20Corporate%20Solutions%2C%20No.1%20First%20Floor%2C%201st%20Cross%2C%20A-Sector%2C%20Sai%20Krishna%20Nivasa%2C%20Near%20Govt.%20School%2C%20Amruthnagar%2C%20Bangalore%20560092"
+                target="_blank"
+                rel="noopener"
+                >View on Google Maps <span aria-hidden="true">↗</span></a
+              >
+            </article>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-7 mb-5">
+              <h2 class="section-heading">Send an enquiry</h2>
+              <p>
+                Complete the form below with a brief description of your
+                requirement.
+              </p>
+              <form id="contactForm">
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="b1de10c2-555b-4009-8041-a37d1d3af2c1"
+                />
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="New Enquiry - Single Source Legal Services"
+                />
+                <input
+                  type="hidden"
+                  name="from_name"
+                  value="Single Source Legal Services Website"
+                />
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  class="hidden"
+                  style="display: none"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+                <div class="form-group">
+                  <label for="name">Full name</label>
+                  <input
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Your name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="you@example.com"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone number</label>
+                  <input
+                    class="form-control"
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="Your contact number"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="service">Area of support</label>
+                  <select
+                    class="form-control"
+                    id="service"
+                    name="service"
+                    required
+                  >
+                    <option value="">Select a service</option>
+                    <option>Industrial &amp; Labour Law Support</option>
+                    <option>Civil and Criminal Legal Services</option>
+                    <option>Entity Registration &amp; Setup</option>
+                    <option>EHS (Environment, Health &amp; Safety)</option>
+                    <option>
+                      Licenses, Registrations &amp; End to End Compliance
+                      Solutions
+                    </option>
+                    <option>Corporate Compliance</option>
+                    <option>Tax &amp; Regulatory Compliance</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message">How can we help?</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder="Briefly describe your requirement"
+                  ></textarea>
+                </div>
+                <button class="btn btn-primary" id="submitBtn" type="submit">
+                  Submit Enquiry
+                </button>
+                <p
+                  id="formNotice"
+                  class="form-notice"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+              </form>
+            </div>
+            <div class="col-lg-4 offset-lg-1">
+              <div class="contact-panel">
+                <span class="eyebrow"
+                  >SINGLE SOURCE SERVICES PRIVATE LIMITED</span
+                >
+                <h3>How we can support</h3>
+                <p>
+                  Our services cover industrial and labour law, civil and
+                  criminal legal services, entity setup, EHS, licensing,
+                  corporate compliance and tax matters.
+                </p>
+                <p class="small-note">
+                  Contact us by phone or email, or send an enquiry using the
+                  form. Our team will review your message and get back to you.
+                </p>
+                <a class="text-link" href="services.html">Browse services →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <a class="brand footer-brand" href="index.html"
+              >SINGLE SOURCE<span>LEGAL</span></a
+            >
+            <p class="mt-3">
+              Clear, accessible and business-focused legal support for
+              individuals, startups and established organizations.
+            </p>
+          </div>
+          <div class="col-lg-3 col-6">
+            <h4>Explore</h4>
+            <a href="about.html">About us</a
+            ><a href="services.html">Our services</a
+            ><a href="team.html">Our team</a><a href="contact.html">Contact</a>
+          </div>
+          <div class="col-lg-3 col-6">
+            <h4>Our focus</h4>
+            <a href="services.html">Labour law</a
+            ><a href="services.html">Corporate compliance</a
+            ><a href="services.html">Tax &amp; regulatory</a
+            ><a href="services.html">EHS compliance</a>
+          </div>
+        </div>
+        <div class="copyright">
+          © <span id="year"></span> Single Source Services Private Limited. All
+          rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="ss-popup-overlay"
+      id="formPopup"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="popupTitle"
+    >
+      <div class="ss-popup" id="popupBox">
+        <div class="ss-popup-icon" id="popupIcon">
+          <span aria-hidden="true">✓</span>
+        </div>
+        <h3 id="popupTitle">Enquiry submitted!</h3>
+        <p id="popupMessage">
+          Thank you for contacting Single Source Legal Services. Our team will
+          get back to you soon.
+        </p>
+        <button type="button" class="ss-popup-close" id="popupClose">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contactForm");
+        const popup = document.getElementById("formPopup");
+        const popupBox = document.getElementById("popupBox");
+        const popupIcon = document.getElementById("popupIcon");
+        const popupTitle = document.getElementById("popupTitle");
+        const popupMessage = document.getElementById("popupMessage");
+        const popupClose = document.getElementById("popupClose");
+        const submitBtn = document.getElementById("submitBtn");
+        const notice = document.getElementById("formNotice");
+
+        function showPopup(success, title, message) {
+          popupBox.classList.toggle("error", !success);
+          popupIcon.innerHTML = success
+            ? '<span aria-hidden="true">✓</span>'
+            : '<span aria-hidden="true">!</span>';
+          popupTitle.textContent = title;
+          popupMessage.textContent = message;
+          popup.classList.add("show");
+          document.body.style.overflow = "hidden";
+          popupClose.focus();
+        }
+        function closePopup() {
+          popup.classList.remove("show");
+          document.body.style.overflow = "";
+        }
+
+        popupClose.addEventListener("click", closePopup);
+        popup.addEventListener("click", function (event) {
+          if (event.target === popup) closePopup();
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && popup.classList.contains("show"))
+            closePopup();
+        });
+
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+          if (!form.reportValidity()) return;
+
+          const originalText = submitBtn.innerHTML;
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Submitting...";
+          notice.textContent = "Sending your enquiry...";
+          notice.style.color = "#178066";
+
+          try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              body: new FormData(form),
+              headers: { Accept: "application/json" },
+            });
+            const result = await response.json();
+            if (!response.ok || !result.success) {
+              throw new Error(
+                result.message ||
+                  "Unable to submit your enquiry. Please try again.",
+              );
+            }
+            form.reset();
+            notice.textContent =
+              "Your enquiry has been submitted successfully.";
+            showPopup(
+              true,
+              "Enquiry submitted successfully!",
+              "Thank you for contacting Single Source Legal Services. We have received your enquiry and our team will get back to you soon.",
+            );
+          } catch (error) {
+            notice.textContent =
+              "We couldn't submit your enquiry. Please try again or contact us by phone.";
+            notice.style.color = "#b42318";
+            showPopup(
+              false,
+              "Submission failed",
+              error.message || "Something went wrong. Please try again.",
+            );
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
